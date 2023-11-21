@@ -16,7 +16,7 @@
             <li><a href="products.html">PRODUCTS</a></li>
             <li><a href="services.html">SERVICES</a></li>
             <li><a href="client.html">CLIENT</a></li>
-            <li><a href="contact.html">CONTACT US</a></li>
+            <li><a href="contact.html" class="current">CONTACT US</a></li>
         </ul>
     </nav>
     <br><br><br>
@@ -27,7 +27,7 @@
     <div class="f">   
     <div class="box2">
         
-    <form name="details" action="abc.php" method="get">
+    <form name="submit-to-google-sheet" action="abc.php" method="get" id="myform">
          
             <label for="fname">First Name</label>
             <input type="text" name="fname" id="fname" maxlength="50" required> <br>
@@ -47,12 +47,12 @@
     
         <label for="industry">Select an Industry:</label>
     <select name="industry" id="industry">
-    <option value="bank"> Banking and Financial Services </option>
+    <option value="banking"> Banking and Financial Services </option>
     <option value="energy"> Energy and resources</option>
-    <option value="gov"> Government</option>
-    <option value="health"> Healthcare</option>
+    <option value="government"> Government</option>
+    <option value="healthcare"> Healthcare</option>
     <option value="insurance">Insurance</option>   
-    <option value="media"> Media and Information Services</option>
+    <option value="media_and_info"> Media and Information Services</option>
     <option value="retail"> Retail and Consumer Products</option>
     <option value="tech"> Technology</option>
     <option value="telecom"> Telecom</option>
@@ -64,10 +64,32 @@
     <textarea name="query" placeholder="If you have any queries, enter them here" id="query"></textarea> <br><br>
     
     <input type="reset" name="reset" value="RESET" id="button">
-    <input type="submit" name="submit" value="SUBMIT">
+    <input type="submit" name="submit" value="SUBMIT"><br>
+        
+    <span id="success"></span>
     
 </form>
     
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbylSmNQRRgUq9kPLPBhaK36jUhJPn7OCF66UU0XYlanRzpOxPn1A3K86ZICSo3hoY03LA/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const success = document.getElementById("success")
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        success.innerHTML="Data Submitted Successfully";
+        
+        setTimeout(function()
+        {
+            success.innerHTML="";
+        },5000)
+        document.getElementById("myform").reset();
+    })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+        
   </div>  
     </div>
         

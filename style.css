@@ -3,7 +3,7 @@ nav{
     width: 100vw;
     height: 75px;
     line-height: 75px;
-    padding: 0px 96px;
+    padding: 0px 0px;
     position: relative;
     background-color: black;
 }
@@ -53,24 +53,36 @@ nav li a:hover{
     font-weight: bold;
 }
 
-
-.box{
-    border: 2px solid gold; 
-    border-radius: 0px 30px 0px 30px ;
-    height: 12em;
-    margin: 3em;
-    padding: 2em;
-
+.boxleft{
+    float: left;
+    width: 35%;
+    background-color: beige;
+    margin-top: 5% ;
+    margin-bottom: 5%;
+    padding:2% 5%;
+    font-size: .75em;
+    margin-left: 3%;
 }
 
-.box p1{
+.boxright{
+    width: 35%;
+    float: right;
+    background-color: beige;
+    margin-top: 5% ;
+    margin-bottom: 5%;
+    padding:2% 5%;;
+    font-size: .75em;
+    margin-right: 3%;
+}
+
+.boxleft p1,.boxright p1{
     font-size: 3em;
     color: goldenrod;
     font-weight: bolder;
     text-shadow: 2px 5px gold;
 }
 
-.box p2{
+.boxleft p2,.boxright p2{
     text-align: center;
     font-size: 1.5em;
 }
@@ -113,33 +125,28 @@ footer{
     color: goldenrod;
     text-shadow: 2px 4px gold;
 }
-.managebox{
+.managebox p{
     float: left;
     text-align: left;
     width: 60%;
     height: 80%;
+    font-size: 1.5em;
+    padding: 3%;
     
     }   
+#management{
+float: right;
+width: 30%;
+vertical-align: middle;
+margin-top: 5%;}
 
-.managebox h1{
+.managebox h1, .managebox h2{
     font-size: 6vh;
     text-align: center;
     color: goldenrod;
     text-shadow: 2px 4px gold;
 }
    
-.managebox h2{
-    font-size: 4vh;
-    text-align: center;
-    color: goldenrod;
-    text-shadow: 2px 3px gold;
-}
-.managebox p{
-    padding: 3vh;
-    text-align: left;
-    font-size: 3vh;
-}
-
 
 .column{
     float: left;
@@ -157,9 +164,6 @@ footer{
     font-size: 20px;
 }
 
-.text p{
-    font-size: 20px;
-}
 
 .text{
     padding: 10px;
@@ -181,10 +185,10 @@ footer{
     padding: 20px;
 }
 
-.para p{
-    font-size: 20px;
+.para h3{
+    padding-top: 5%;
+    clear: both;
 }
-
 .para p6,.text h1{ 
     font-size: 30px;
     color: goldenrod;
@@ -227,4 +231,25 @@ textarea{
 
 #button{
     margin-left: 11em;
+}
+
+.lside,.middle{
+    float: left;
+    width: 29%;
+    margin: 1%;
+    padding: 1%;
+    background-color: beige;
+    font-size: 1em;
+}
+.rside{
+    float: right;
+    width: 29%;
+    margin: 1%;
+    padding: 1%;
+    background-color: beige;
+    font-size: 1em;
+}
+
+.current{
+    color: darkgoldenrod;
 }
